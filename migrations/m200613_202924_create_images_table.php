@@ -20,7 +20,7 @@ class m200613_202924_create_images_table extends Migration
             'album_id' => $this->text()->notNull(),
             'image' => $this->text()->notNull(),
             'image_delete_hash' => $this->text()->notNull(),
-            'imaeg_url' => $this->text()->notNull(),
+            'image_url' => $this->text()->notNull(),
             'timestamp' => $this->timestamp(),
         ]);
 
