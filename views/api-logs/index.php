@@ -4,19 +4,15 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\ImagesSearch */
+/* @var $searchModel app\models\ApiLogsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Images';
+$this->title = 'Api Logs';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="images-index">
+<div class="api-logs-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Create Images', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
 
     <?php Pjax::begin(); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -28,13 +24,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'album_id:ntext',
-            'image_id:ntext',
-            'image_delete_hash:ntext',
-            'image_url:ntext',
-            //'timestamp',
+            'request_url:ntext',
+            'request_body:ntext',
+            'response:ntext',
+            'timestamp',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn','template'=>'{delete}'],
         ],
     ]); ?>
 

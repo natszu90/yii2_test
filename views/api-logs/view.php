@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Images */
+/* @var $model app\models\ApiLogs */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Images', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Api Logs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="images-view">
+<div class="api-logs-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,10 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'album_id:ntext',
-            'image_id:ntext',
-            'image_delete_hash:ntext',
-            'image_url:ntext',
+            'request_url:ntext',
+            'request_body:ntext',
+            'response:ntext',
             'timestamp',
         ],
     ]) ?>
